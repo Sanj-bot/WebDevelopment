@@ -45,3 +45,28 @@ gap:1.5vmin;
     border:none;
 
 }
+
+#new-btn{
+    padding:1rem;
+    font-size:1.5rem;
+    background-color:#191913;
+    color:#fff;
+    border-radius:1rem;
+    border:none;
+}
+
+
+#msg{
+    color:#ffffc7;
+    font-size:8vmin;
+}
+
+.msg-container{
+    height:18vmin;
+}
+
+
+.hide{
+    display:none;
+}
+
