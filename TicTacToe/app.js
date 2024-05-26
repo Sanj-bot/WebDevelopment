@@ -15,6 +15,10 @@ const winPatterns = [
   [6, 7, 8],
 ];
 
+const resetGame = () => {
+  turnO = true;
+};
+
 boxes.forEach((box) => {
   box.addEventListener("click", () => {
     console.log(" box was clicked");
@@ -52,6 +56,3 @@ const checkWinner = () => {
     }
   }
 };
-
-
-const 
