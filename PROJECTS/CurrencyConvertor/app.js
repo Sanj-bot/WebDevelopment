@@ -1,59 +1,112 @@
-const BASE_URL =
-  "https://cdn.jsdelivr.net/npm/fawazahmed0/currency-api@latest/currencies";
+dropdowns = document.querySelectorAll(".dropdown select");
+messageDetail = document.querySelector(".msg");
+clickButton = document.querySelector("form button");
+BASE_URL =
+  "https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/";
+fromURL = document.querySelector(".from select");
+toURL = document.querySelector(".to select");
+reverseButton = document.querySelector("#reverseCurrency");
 
-const dropdowns = document.querySelectorAll(".dropdown select");
-const btn = document.querySelector("form button");
-const fromCurr = document.querySelector(".from select");
-const toCurr = document.querySelector(".to select");
-const msg = document.querySelector(".msg");
-
-for (let select of dropdowns) {
-  for (currCode in countryList) {
-    let newOption = document.createElement("option");
-    newOption.innerText = currCode;
-    newOption.value = currCode;
-    if (select.name === "from" && currCode === "USD") {
-      newOption.selected = "selected";
-    } else if (select.name === "to" && currCode === "INR") {
-      newOption.selected = "selected";
+for (const select of dropdowns) {
+  for (let currencyCode in countryList) {
+    let newElement = document.createElement("option");
+    newElement.innerText = currencyCode;
+    newElement.value = currencyCode;
+    if (select.name === "from" && currencyCode === "USD") {
+      newElement.selected = "selected";
+    } else if (select.name === "to" && currencyCode === "INR") {
+      newElement.selected = "selected";
     }
-    select.append(newOption);
+    select.append(newElement);
   }
 
-  select.addEventListener("change", (evt) => {
-    updateFlag(evt.target);
+  select.addEventListener("change", (env) => {
+    updateFlag(env.target);
   });
 }
 
-const updateExchangeRate = async () => {
-  let amount = document.querySelector(".amount input");
-  let amtVal = amount.value;
-  if (amtVal === "" || amtVal < 1) {
-    amtVal = 1;
-    amount.value = "1";
-  }
-  const URL = `${BASE_URL}/${fromCurr.value.toLowerCase()}/${toCurr.value.toLowerCase()}.json`;
-  let response = await fetch(URL);
-  let data = await response.json();
-  let rate = data[toCurr.value.toLowerCase()];
+reverseButton.addEventListener("click", async (evt) => {
+  evt.preventDefault();
+  let fromValue = fromURL.value;
+  let toValue = toURL.value;
+  fromURL.value = toValue;
+  toURL.value = fromValue;
+  updateFlag(fromURL);
+  updateFlag(toURL);
+});
 
-  let finalAmount = amtVal * rate;
-  msg.innerText = `${amtVal} ${fromCurr.value} = ${finalAmount} ${toCurr.value}`;
-};
-
-const updateFlag = (element) => {
-  let currCode = element.value;
-  let countryCode = countryList[currCode];
+const updateFlag = (env) => {
+  let conCode = env.value;
+  let countryCode = countryList[conCode];
   let newSrc = `https://flagsapi.com/${countryCode}/flat/64.png`;
-  let img = element.parentElement.querySelector("img");
+  let img = env.parentElement.querySelector("img");
+  let FullName = countryNameList[conCode];
+  let title = img.setAttribute("title", `${FullName}`); // Assigning by method.
   img.src = newSrc;
 };
 
-btn.addEventListener("click", (evt) => {
+clickButton.addEventListener("click", async (evt) => {
   evt.preventDefault();
-  updateExchangeRate();
+  await fetchDataRespone();
 });
 
+const fetchDataRespone = async () => {
+  messageDetail.innerHTML = `<div class="loader"></div>`;
+  let amt = document.querySelector(".amount input");
+  let amtVul = amt.value;
+
+  if (amtVul === "" || amtVul < 1) {
+    amtVul = 1;
+    amt.value = "1";
+  }
+
+  const API1_URL = `${BASE_URL}${fromURL.value.toLowerCase()}/${toURL.value.toLowerCase()}.json`;
+  const API2_URL = `https://open.er-api.com/v6/latest/${fromURL.value}`;
+
+  // Define a function to fetch data from an API
+  async function fetchData(apiUrl) {
+    try {
+      const response = await fetch(apiUrl);
+      if (response.ok) {
+        return await response.json();
+      } else {
+        console.error(
+          `API call to ${apiUrl} failed with status code ${response.status}`
+        );
+        return null;
+      }
+    } catch (error) {
+      console.error(`Error fetching data from ${apiUrl}: ${error.message}`);
+      return null;
+    }
+  }
+
+  // Fetch data from both APIs sequentially using async/await
+  const api1Data = await fetchData(API1_URL);
+  const api2Data = await fetchData(API2_URL);
+
+  if (api1Data) {
+    // Call your fetchdata method for API1
+    console.log("API1 call was successful. Calling fetchdata method...");
+    await fetchDataMethod(api1Data, toURL.value, amtVul);
+  }
+  if (api2Data) {
+    // Call your fetchdata method for API2
+    console.log("API2 call was successful. Calling fetchdata method...");
+    await fetchDataMethod(api2Data, toURL.value, amtVul);
+  }
+};
+
+const fetchDataMethod = async (response, value, amtVul) => {
+  let responseData = response.rates;
+  if (responseData.hasOwnProperty(value)) {
+    const result = responseData[value];
+    let finalResult = Math.round(result * amtVul);
+    console.log(finalResult);
+    messageDetail.innerText = `${amtVul} ${fromURL.value} = ${finalResult} ${toURL.value}`;
+  }
+};
+
 window.addEventListener("load", () => {
-  updateExchangeRate();
+  fetchDataRespone();
 });
