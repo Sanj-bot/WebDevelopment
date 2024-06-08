@@ -1,21 +1,47 @@
-# Web development
+# development from internshala and projects
 
-Foobar is a codebase for all my web development practice and project.
+The repo contains all code related to web dev
 
-## Installation
+## Description
 
-fork it!
+It contains modules of HTML,CSS,JS, REACT, NODE, and Projects. The code is taken from internshala and the projects are taken from various sources.
+
+## Getting Started
+
+### Dependencies
+
+* windows 11 is preferred.
+* VS code
+
+### Installing
+
+* Just fork it!
+
+### Executing program
+
+* Install node
+```npm install node```
+* Install XAMPP
+
+## Help
+
+email: sanjaygurjar741@gmail.com
+
+
+## Authors
+
+* Sanjay Singh Gurjar
+* Yatan Kulshrestha
 
 
 
-
-## Contributing
-
-Pull requests are welcome. For major changes, please open an issue first
-to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
 
 ## License
 
-[MIT](https://choosealicense.com/licenses/mit/)
+This project is licensed under the [MIT] License - see the LICENSE.md file for details
+
+## Acknowledgments
+
+Inspiration, code snippets, etc.
+* [React](https://react.dev/)
+* [Node](https://nodejs.org/en)
