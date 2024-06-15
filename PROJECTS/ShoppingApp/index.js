@@ -22,15 +22,20 @@ addButtonEl.addEventListener("click", function () {
   let inputValue = inputFieldEl.value;
   push(shoppingListInDB, inputValue);
   clearInputFieldEl();
-  appendItemToShoppingListEl(inputValue);
 });
+
 onValue(shoppingListInDB, function (snapshot) {
   let itemsArray = Object.values(snapshot.val());
   console.log(itemsArray);
+  clearShoppingListEl();
   for (let i = 0; i < itemsArray.length; i++) {
-    console.log(itemsArray[i]);
+    appendItemToShoppingListEl(itemsArray[i]);
   }
 });
+
+function clearShoppingListEl() {
+  shoppingListEl.innerHTML = "";
+}
 
 function clearInputFieldEl() {
   inputFieldEl.value = "";
