@@ -50,10 +50,7 @@ function appendItemToShoppingListEl(item) {
   let newEl = document.createElement("li");
   newEl.textContent = itemValue;
 
-  newEl.addEventListener("click",function(){
-    
-  })
-
+  newEl.addEventListener("click", function () {});
 
   shoppingListEl.append(newEl);
 }
