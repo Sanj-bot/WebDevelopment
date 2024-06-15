@@ -2,6 +2,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebas
 import {
   getDatabase,
   ref,
+  onValue,
   push,
 } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
 
@@ -22,6 +23,13 @@ addButtonEl.addEventListener("click", function () {
   push(shoppingListInDB, inputValue);
   clearInputFieldEl();
   appendItemToShoppingListEl(inputValue);
+});
+onValue(shoppingListInDB, function (snapshot) {
+  let itemsArray = Object.values(snapshot.val());
+  console.log(itemsArray);
+  for (let i = 0; i < itemsArray.length; i++) {
+    console.log(itemsArray[i]);
+  }
 });
 
 function clearInputFieldEl() {
