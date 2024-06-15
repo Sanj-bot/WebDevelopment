@@ -3,6 +3,7 @@ import {
   getDatabase,
   ref,
   onValue,
+  remove,
 } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
 
 const appSettings = {
@@ -39,8 +40,8 @@ function appendStoryToStoriesEl(story) {
   newEl.textContent = storyTitle;
 
   newEl.addEventListener("dblclick", function () {
-    
-
+    let exactLocationOfStoryInDB = ref(database, `newsStories/${storyID}`);
+    remove(exactLocationOfStoryInDB);
   });
 
   storiesEl.append(newEl);
