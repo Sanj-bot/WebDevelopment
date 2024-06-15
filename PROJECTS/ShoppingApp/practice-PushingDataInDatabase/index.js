@@ -18,6 +18,8 @@ const booksEl = document.getElementById("books");
 
 onValue(booksInDB, function (snapshot) {
   let booksArray = Object.values(snapshot.val());
+
+  clearBooksListEl();
   for (let i = 0; i < booksArray.length; i++) {
     let currentBook = booksArray[i];
     appendBookToBooksListEl(currentBook);
