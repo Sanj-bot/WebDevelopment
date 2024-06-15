@@ -2,6 +2,7 @@ html, body {
     margin: 0;
     padding: 0;
     background-color: #F6F6F6;
+    user-select: none;
 }
 
 .container {
@@ -13,7 +14,7 @@ html, body {
 }
 
 h1 {
-    user-select: none;
+  
 }
 
 img {
