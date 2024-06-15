@@ -20,6 +20,26 @@ const shoppingListEl = document.getElementById("shopping-list");
 addButtonEl.addEventListener("click", function () {
   let inputValue = inputFieldEl.value;
   push(shoppingListInDB, inputValue);
-  inputFieldEl.value = "";
-  shoppingListEl.innerHTML += `<li>${inputValue}</li>`;
+  clearInputFieldEl();
+  appendItemToShoppingListEl(inputValue);
 });
+
+function clearInputFieldEl() {
+  inputFieldEl.value = "";
+}
+function appendItemToShoppingListEl(itemValue) {
+  shoppingListEl.innerHTML += `<li>${itemValue}</li>`;
+}
+
+let scrimbaUsers = {
+  "00": "sindre@scrimba.com",
+  "01": "per@scrimba.com",
+  "02": "frode@scrimba.com",
+};
+
+// let scrimbaUsersEmails = Object.values(scrimbaUsers);
+
+// let scrimbaUsersIDs = Object.keys(scrimbaUsers);
+// let scrimbaUsersEntries = Object.entries(scrimbaUsers);
+
+// console.log(scrimbaUsersEntries);
