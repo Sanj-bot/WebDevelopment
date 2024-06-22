@@ -6,7 +6,7 @@ html, body {
     margin: 0;
     padding: 0;
     font-family: 'Rubik', sans-serif;
-    background-color: #EEF0F4;
+    background-color: #3b5aa7;
     color:#432000;
     user-select: none;
 }
@@ -19,12 +19,13 @@ html, body {
 }
 
 img {
+    border-radius: 8px;
     width: 150px;
     margin: 0 auto;
 }
 
 input {
-    color: #432000;
+    color: #e97910;
     background-color: #DCE1EB;
     border: 0;
     padding: 15px;
@@ -36,8 +37,8 @@ input {
 }
 
 button {
-    color: #FDFDFD;
-    background-color: #AC485A;
+    color: #302f66;
+    background-color: #d0e656;
     border: 0;
     padding: 15px;
     border-radius: 8px;
@@ -47,7 +48,7 @@ button {
 
 }
 button:hover{
-    background-color: #432000;
+    background-color: #f87f0d;
     cursor: pointer;
 }
 ul {
@@ -60,7 +61,7 @@ ul {
 
 ul li {
     font-size: 20px;
-    background-color: #FFFDF8;
+    background-color: #98ad5d;
     padding: 15px;
     border-radius: 8px;
     flex-grow: 1;
