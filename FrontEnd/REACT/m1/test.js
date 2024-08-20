@@ -1,2 +1,2 @@
-const five = 5;
-console.log(five);
+const importedmyName = require("./second");
+console.log(importedmyName);
