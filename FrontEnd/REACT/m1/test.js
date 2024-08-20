@@ -1,2 +1,2 @@
 const importedmyName = require("./second");
-console.log(importedmyName);
+console.log(importedmyName.myName);
