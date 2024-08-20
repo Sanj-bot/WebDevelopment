@@ -1,0 +1,17 @@
+{
+  "name": "project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "mytestscript": "echo hello"
+  },
+  "author": "",
+  "license": "MIT",
+  "description": "",
+  "dependencies": {
+    "cowsay": "^1.6.0"
+  },
+  "devDependencies": {
+    "prettier": "3.3.3"
+  }
+}
