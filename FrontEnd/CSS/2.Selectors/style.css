@@ -1,3 +1,7 @@
+*{
+    font-family:fantasy;
+}
+
 body{
     font-size: 24px;
 }
@@ -10,4 +14,9 @@ body{
 .purple{
     color:rgb(170, 30, 170);
     font-family:monospace;
+}
+.highlight{
+    background-color: yellow;
+    font-weight: bolder;
+    font-style:italic;
 }
