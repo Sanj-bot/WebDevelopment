@@ -1,0 +1,15 @@
+*{
+    text-align: center;
+    
+}
+h2{
+    font-family: 'Times New Roman', Times, serif;
+}
+
+h3{
+    font-style: italic;
+}
+
+.grey{
+    color: grey;
+}
