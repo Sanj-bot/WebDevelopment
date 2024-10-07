@@ -1,0 +1,15 @@
+/* margin =0 for all elements */
+.*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+/* margin: keep distance among 2 elements. */
+/* padding: to keep distance between content and its border. */
+.box{
+    width:200px;
+    height:200px;
+    border:20px solid red;
+    padding:30px;
+    margin:40px;
+}
