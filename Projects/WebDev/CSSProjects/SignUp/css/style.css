@@ -41,8 +41,58 @@ body {
     color: #555;
 
 }
-.signup-body{
-    
+.signup-body p{
+    margin: 10px 0;
+
 }
+
+.signup-body p label{
+    display: block;
+    font-weight: bold;
+}
+.signup-body p input{
+    width: 100%;
+    padding:10px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 1 rem;
+    margin-top: 4px;
+
+}
+
+.signup-body p input[type="submit"]{
+    background-color: #348ad3;
+    border: none;
+    color: white;
+    cursor: pointer;
+
+}
+.signup-body p input[type="submit"]:hover{
+    background-color: #3434;
+   
+
+
+}
+.signup-footer p a{
+    color: #2773a5;
+
+}
+.circle{
+    width:200px;
+    height: 200px;
+    border-radius:100px ;
+    background:linear-gradient(to top right ,#ffffff33,#ffffffff);
+    position: absolute;
+}
+.c1{
+    top: 100px;
+    left: 40px;
+}
+.c2{
+    bottom: 200px;
+    right: 50px;
+}
+
+
       
 
