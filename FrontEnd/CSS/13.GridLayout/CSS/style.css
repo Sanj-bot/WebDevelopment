@@ -11,7 +11,11 @@
     column-gap: 5px;
     /* grid-template-columns: 100px 200px 300px;
      */
-    grid-template-columns: 2fr 1fr 1fr 1fr;
+    /* grid-template-columns: 2fr 1fr 1fr 1fr; */
+    /* grid-template-columns: repeat(4,1fr); */
+    grid-template-columns: auto auto;
+    grid-template-rows: 200px 90px;
+    grid-auto-rows: 120px;
 }
 
 .box{
