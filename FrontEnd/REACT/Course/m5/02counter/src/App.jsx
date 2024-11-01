@@ -4,18 +4,37 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 
 function App() {
+  // using hooks to display changes everywhere.
+  // Note: here counter is a variable, and set counter is a function.
   let [counter, setCounter] = useState(15);
 
+  // first function: it increases the counter value, only until 20
   const addValue = () => {
     console.log("value added", Math.random(), counter);
     counter = counter + 1;
-    setCounter(counter);
+    if(counter>20)
+    {
+
+    }
+    else
+    {
+      setCounter(counter);
+    }
+    
   };
+    // 2nd function which reduces value by 1, until it reaches 0.
   const removeValue = () => {
     counter--;
-    setCounter(counter);
+    if(counter<=0){
+
+    }
+    else
+    {
+      setCounter(counter);
+    }
     console.log("value subtracted", Math.random(), counter);
   };
+  
   return (
     <>
       <h1>chai or react</h1>
