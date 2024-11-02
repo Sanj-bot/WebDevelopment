@@ -5,6 +5,9 @@ function App() {
 
   return (
     <>
+     <h1 className="flex flex-wrap justify-center"
+      style={{backgroundColor:color}}
+     >Hello Mimo the color is  {color}</h1>
       <div
         className="w-full h-screen duration-200"
         style={{ backgroundColor: color }}
@@ -15,7 +18,7 @@ function App() {
             <button
               onClick={() => setColor("red")}
               className="outline-none px-4 py-1 rounded-full shadow-lg"
-              style={{ backgroundColor: "red" }}
+              style={{ backgroundColor:"red" }}
             >
               red
             </button>
