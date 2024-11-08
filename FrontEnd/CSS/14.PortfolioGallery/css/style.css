@@ -33,7 +33,7 @@ body{
 .box
 {
     background-size: cover;
-    background-position:top;
+    background-position:bottom;
     justify-content: center;
     color:white;
     display:flex;
@@ -41,6 +41,7 @@ body{
     background-color: #222;
     background-blend-mode:hard-light ;
     transition: all 1s ease-in-out;
+    cursor: pointer;
 }
 .box:hover{
     background-color: #999;
