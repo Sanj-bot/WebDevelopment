@@ -1,0 +1,8 @@
+body{
+    background-color: red;
+}
+@media (max-width:400px){
+    body{
+        background-color: green;
+    }
+}
