@@ -13,7 +13,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* transform: scale(2); */
-    /* transform: scaleZ(2); */
-    transform: translate(20px,40px);
+    transition: 0.4s ease;
+    transform-origin: bottom left;
+    
+    
+}
+.box:hover{
+    transform: rotate(45deg);
+    background-color: grey;
 }
