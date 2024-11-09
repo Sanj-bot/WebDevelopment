@@ -1,0 +1,15 @@
+.box{
+    /* display: inline-flex; */
+    margin: 100px auto;
+    width: 200px;
+    height: 200px;
+    background-color: black;
+    transition: 1s;
+    transition-delay: 1s;
+}
+
+.box:hover{
+    background-color: yellow;
+    border-radius: 20%;
+    transform: rotate(180deg);
+}
