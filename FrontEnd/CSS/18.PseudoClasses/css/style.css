@@ -34,3 +34,38 @@ ul li:last-child{
 ul li:nth-child(4){
     background-color: green;
 }
+h2::first-letter{
+    font-style: italic;
+    font-size: 3rem;
+
+}
+p::first-line{
+    background-color: grey;
+    font-style: italic;
+}
+::selection{
+    color: grey;
+    background-color: black;
+}
+h3::before{
+    content:'any this is beginning';
+}
+
+h3::after{
+    content:'*';
+}
+.required::after{
+    content:'*';
+    background-color: red;
+    color: white;
+}
+
+.important::after{
+    content: 'important';
+    background-color: red;
+    color: white;
+    padding: 0.2 rem;
+    font-size:0.5rem;
+    margin-left: 10px;
+    vertical-align: middle;
+}
