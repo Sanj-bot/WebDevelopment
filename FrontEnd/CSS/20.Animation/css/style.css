@@ -6,10 +6,28 @@
     background-color: black;
     transition: 1s;
     transition-delay: 1s;
+    transition-timing-function: ease-out;
 }
 
 .box:hover{
     background-color: yellow;
     border-radius: 20%;
     transform: rotate(180deg);
+}
+
+.list{
+    display: flex;
+    gap:20px;
+    list-style:none;;
+}
+.item{
+font-size: 2rem;
+transition: 0.3s ease-in;
+}
+.item:hover{
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    font-style: italic;
+    transform: translateY(-10px);
 }
