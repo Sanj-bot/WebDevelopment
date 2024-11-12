@@ -4,7 +4,7 @@ function change() {
 
 function a() {
   let a = "Dal batti";
-  document.getElementById("a").innerHTML = "Dal batti";
+  document.getElementById("a").innerHTML = a;
 }
 function b() {
   let b = "alloo paratha";
