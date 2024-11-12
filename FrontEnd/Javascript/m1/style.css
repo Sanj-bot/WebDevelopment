@@ -1,0 +1,35 @@
+
+body{
+    text-align: center;
+}
+
+#aa{
+    border: 2px solid black;
+    align-items: stretch;
+    border-radius: 4px;
+}
+#aa:hover{
+    background-color: grey;
+    padding: 1px;
+    
+}
+#a{
+border: .2px solid white;
+padding: 1px;
+}
+#b{
+    
+border: .2px solid white;
+padding: 1px;
+}
+#c{
+    
+border: .2px solid white;
+
+padding: 1px;}
+#d{
+    
+border: .2px solid white;
+
+padding: 1px;}
+
