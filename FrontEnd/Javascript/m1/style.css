@@ -1,8 +1,11 @@
 
 body{
     text-align: center;
+    background:rgb(247, 240, 241);
 }
-
+h1{
+    background:linear-gradient(180deg,black,white);
+}
 #aa{
     border: 2px solid black;
     align-items: stretch;
