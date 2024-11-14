@@ -17,6 +17,24 @@
     }
     addLanguage("python");
     addLanguage("java");
-    
+
+    function addOptimizedLanguage(langName) {
+      const li = document.createElement("li");
+      li.appendChild(document.createTextNode(langName));
+      document.querySelector(".language").appendChild(li);
+    }
+    addOptimizedLanguage("golang");
+    const lang2 = document.querySelector("li:nth-child(2)");
+    lang2.innerHTML = "Mojo";
+    const newli=document.createElement('li');
+    newli.textContent="mojo";
+
+    lang2.replaceWith(newli);
+    const flang=document.querySelector("li:first-child");
+    flang.outerHTML='<li> tyescript</li>';
+
+    //remove 
+    const lastLang=document.querySelector("li:last-child");
+    lastLang.remove();
   </script>
 </html>
