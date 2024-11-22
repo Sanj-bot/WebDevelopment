@@ -32,6 +32,15 @@ app.get("/api/products", (req, res) => {
         "https://www.google.com/url?sa=i&url=https%3A%2F%2Fcfa.org%2Fbreed%2Famerican-shorthair%2F&psig=AOvVaw1VGjUYdoIrOkSXR7dYiwLe&ust=1732334168245000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCJjL0OeF74kDFQAAAAAdAAAAABAJ",
     },
   ];
+
+  if (req.query.search) {
+    const filterProducts = products.filter((product) =>
+      product.name.includes(req.query.search)
+    );
+    res.send(filterProducts);
+    return;
+  }
+
   setTimeout(() => {
     res.send(products);
   }, 2000);
