@@ -5,25 +5,28 @@ import "./App.css";
 import axios from "axios";
 
 function App() {
-  // const [count, setCount] = useState(0);
-  const [products, setProducts] = useState([]);
-  const [error, setError] = useState(false);
-  const [loading, setLoading] = useState(false);
-
-  if (error) {
-    return <h1>Something went wrong!!</h1>;
-  }
+  const [products, error, loading] = customReactQuery("/api/products");
+ 
 
   return (
     <>
       <h1>hello bois, this is my cat api backend</h1>
+
+   
+
+      {loading && <h1>Loading...🦁</h1>}
+      {error && <h1>Something went wrong</h1>}
       <h2>Number of products are: {products.length}</h2>
     </>
   );
 }
 
-export default App;
-const customReactQuery = () => {
+const customReactQuery = (urlPath) => {
+  const [products, setProducts] = useState([]);
+  const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [search, setSearch] = useState("");
+
   useEffect(() => {
     (async () => {
       try {
@@ -38,4 +41,7 @@ const customReactQuery = () => {
       }
     })();
   }, []);
+  return [products, error, loading];
 };
+
+export default App;
